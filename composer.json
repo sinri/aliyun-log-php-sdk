@@ -1,0 +1,20 @@
+{
+  "name": "sinri/aliyun-log-php-sdk",
+  "description": "Aliyun Log SDK for PHP with Sinri Fix",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Sinri Edogawa",
+      "email": "e.joshua.s.e@gmail.com"
+    }
+  ],
+  "autoload": {
+    "sinri\\aliyun\\sls\\": "Aliyun/SinriLog/src/"
+  },
+  "require": {
+    "ext-json": "*",
+    "ext-zlib": "*",
+    "ext-curl": "*"
+  }
+}
