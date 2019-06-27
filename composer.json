@@ -10,12 +10,12 @@
     }
   ],
   "autoload": {
-    "PSR-4": {
+    "psr-4": {
       "sinri\\aliyun\\sls\\": "Aliyun/SinriLog/src/"
     }
   },
   "autoload-dev": {
-    "PSR-4": {
+    "psr-4": {
       "sinri\\aliyun\\sls\\test\\": "Aliyun/SinriLog/test/"
     }
   },
