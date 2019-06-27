@@ -10,7 +10,7 @@ namespace sinri\aliyun\sls;
 use Exception;
 
 /**
- * The Exception of the log serivce request & response.
+ * The Exception of the log service request & response.
  *
  * @author log service dev
  */

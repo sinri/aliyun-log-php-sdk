@@ -63,7 +63,7 @@ class AliyunLogSimpleLogger
     private $cacheBytes;
 
     /**
-     * log client which was wrappered by this logger
+     * log client which was wrapped by this logger
      * @var AliyunLogClient
      */
     private $client;
@@ -87,7 +87,7 @@ class AliyunLogSimpleLogger
      * @param string $logstore the logstore
      * @param string $topic
      * @param null $maxCacheLog max log items limitation, by default it's 100
-     * @param null $maxWaitTime max thread waiting time, bydefault it's 5 seconds
+     * @param null $maxWaitTime max thread waiting time, by default it's 5 seconds
      * @param null $maxCacheBytes
      * @throws Exception
      */

@@ -28,18 +28,18 @@ class AliyunLogUtil
     }
 
     /**
-     * If $gonten is raw IP address, return true.
+     * If $gotten is raw IP address, return true.
      *
-     * @param $gonten
+     * @param $gotten
      * @return bool
      */
-    public static function isIp($gonten)
+    public static function isIp($gotten)
     {
-        $ip = explode(".", $gonten);
+        $ip = explode(".", $gotten);
         for ($i = 0; $i < count($ip); ++$i)
             if ($ip[$i] > 255)
                 return 0;
-        return preg_match("/^[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}$/", $gonten);
+        return preg_match("/^[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}$/", $gotten);
     }
 
     /**

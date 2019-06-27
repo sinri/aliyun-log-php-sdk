@@ -16,7 +16,7 @@ class CreateShipperRequest extends Request
 
     private $targetType;
 
-    private $targetConfigration;
+    private $targetConfiguration;
 
     private $logStore;
 
@@ -80,16 +80,16 @@ class CreateShipperRequest extends Request
     /**
      * @return mixed
      */
-    public function getTargetConfigration()
+    public function getTargetConfiguration()
     {
-        return $this->targetConfigration;
+        return $this->targetConfiguration;
     }
 
     /**
-     * @param mixed $targetConfigration
+     * @param mixed $targetConfiguration
      */
-    public function setTargetConfigration($targetConfigration)
+    public function setTargetConfiguration($targetConfiguration)
     {
-        $this->targetConfigration = $targetConfigration;
+        $this->targetConfiguration = $targetConfiguration;
     }
 }

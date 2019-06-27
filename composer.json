@@ -12,9 +12,18 @@
   "autoload": {
     "sinri\\aliyun\\sls\\": "Aliyun/SinriLog/src/"
   },
+  "autoload-dev": {
+    "sinri\\aliyun\\sls\\test\\": "Aliyun/SinriLog/test/"
+  },
   "require": {
     "ext-json": "*",
     "ext-zlib": "*",
     "ext-curl": "*"
+  },
+  "repositories": {
+    "packagist": {
+      "type": "composer",
+      "url": "https://packagist.laravel-china.org"
+    }
   }
 }

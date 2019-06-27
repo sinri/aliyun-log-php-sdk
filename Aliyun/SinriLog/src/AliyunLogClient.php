@@ -128,7 +128,7 @@ class AliyunLogClient
     protected $isRowIp;
 
     /**
-     * @var integer Http send port. The dafault value is 80.
+     * @var integer Http send port. The default value is 80.
      */
     protected $port;
 
@@ -327,7 +327,7 @@ class AliyunLogClient
 
     /**
      * Put logs to Log Service.
-     * Unsuccessful opertaion will cause an AliyunLogException.
+     * Unsuccessful operation will cause an AliyunLogException.
      *
      * @param PutLogsRequest $request the PutLogs request parameters class
      * @return PutLogsResponse
@@ -347,8 +347,8 @@ class AliyunLogClient
         if (!$source)
             $source = $this->source;
         $logGroup->setSource($source);
-        $logitems = $request->getLogitems();
-        foreach ($logitems as $logItem) {
+        $logItems = $request->getLogitems();
+        foreach ($logItems as $logItem) {
             $log = new SLSProtocolLog();
             $log->setTime($logItem->getTime());
             $content = $logItem->getContents();
@@ -404,7 +404,7 @@ class AliyunLogClient
         $body = array(
             "shipperName" => $request->getShipperName(),
             "targetType" => $request->getTargetType(),
-            "targetConfiguration" => $request->getTargetConfigration()
+            "targetConfiguration" => $request->getTargetConfiguration()
         );
         $body_str = json_encode($body);
         $headers["x-log-bodyrawsize"] = strlen($body_str);
@@ -557,7 +557,7 @@ class AliyunLogClient
 
     /**
      * create logstore
-     * Unsuccessful opertaion will cause an AliyunLogException.
+     * Unsuccessful operation will cause an AliyunLogException.
      *
      * @param CreateLogstoreRequest $request the CreateLogStore request parameters class.
      * @return CreateLogstoreResponse
@@ -586,7 +586,7 @@ class AliyunLogClient
 
     /**
      * update logstore
-     * Unsuccessful opertaion will cause an AliyunLogException.
+     * Unsuccessful operation will cause an AliyunLogException.
      *
      * @param UpdateLogstoreRequest $request the UpdateLogStore request parameters class.
      * @return UpdateLogstoreResponse
@@ -614,7 +614,7 @@ class AliyunLogClient
 
     /**
      * List all logstores of requested project.
-     * Unsuccessful opertaion will cause an AliyunLogException.
+     * Unsuccessful operation will cause an AliyunLogException.
      *
      * @param ListLogstoresRequest $request the ListLogstores request parameters class.
      * @return ListLogstoresResponse
@@ -634,7 +634,7 @@ class AliyunLogClient
 
     /**
      * Delete logstore
-     * Unsuccessful opertaion will cause an AliyunLogException.
+     * Unsuccessful operation will cause an AliyunLogException.
      *
      * @param DeleteLogstoreRequest $request the DeleteLogstores request parameters class.
      * @return DeleteLogstoreResponse
@@ -655,7 +655,7 @@ class AliyunLogClient
 
     /**
      * List all topics in a logstore.
-     * Unsuccessful opertaion will cause an AliyunLogException.
+     * Unsuccessful operation will cause an AliyunLogException.
      *
      * @param ListTopicsRequest $request the ListTopics request parameters class.
      * @return ListTopicsResponse
@@ -681,7 +681,7 @@ class AliyunLogClient
 
     /**
      * Get histograms of requested query from log service.
-     * Unsuccessful opertaion will cause an AliyunLogException.
+     * Unsuccessful operation will cause an AliyunLogException.
      *
      * @param GetHistogramsRequest $request the GetHistograms request parameters class.
      * @return array (json body, http header)
@@ -711,7 +711,7 @@ class AliyunLogClient
 
     /**
      * Get histograms of requested query from log service.
-     * Unsuccessful opertaion will cause an AliyunLogException.
+     * Unsuccessful operation will cause an AliyunLogException.
      *
      * @param GetHistogramsRequest $request the GetHistograms request parameters class.
      * @return GetHistogramsResponse
@@ -727,7 +727,7 @@ class AliyunLogClient
 
     /**
      * Get logs from Log service.
-     * Unsuccessful opertaion will cause an AliyunLogException.
+     * Unsuccessful operation will cause an AliyunLogException.
      *
      * @param GetLogsRequest $request the GetLogs request parameters class.
      * @return array(json body, http header)
@@ -764,7 +764,7 @@ class AliyunLogClient
 
     /**
      * Get logs from Log service.
-     * Unsuccessful opertaion will cause an AliyunLogException.
+     * Unsuccessful operation will cause an AliyunLogException.
      *
      * @param GetLogsRequest $request the GetLogs request parameters class.
      * @return GetLogsResponse
@@ -780,7 +780,7 @@ class AliyunLogClient
 
     /**
      * Get logs from Log service.
-     * Unsuccessful opertaion will cause an AliyunLogException.
+     * Unsuccessful operation will cause an AliyunLogException.
      *
      * @param GetProjectLogsRequest $request the GetLogs request parameters class.
      * @return array(json body, http header)
@@ -803,7 +803,7 @@ class AliyunLogClient
 
     /**
      * Get logs from Log service.
-     * Unsuccessful opertaion will cause an AliyunLogException.
+     * Unsuccessful operation will cause an AliyunLogException.
      *
      * @param GetProjectLogsRequest $request the GetLogs request parameters class.
      * @return GetLogsResponse
@@ -818,8 +818,8 @@ class AliyunLogClient
     }
 
     /**
-     * Get logs from Log service with shardid conditions.
-     * Unsuccessful opertaion will cause an AliyunLogException.
+     * Get logs from Log service with ShardId conditions.
+     * Unsuccessful operation will cause an AliyunLogException.
      *
      * @param BatchGetLogsRequest $request the BatchGetLogs request parameters class.
      * @return BatchGetLogsResponse
@@ -857,7 +857,7 @@ class AliyunLogClient
 
     /**
      * List Shards from Log service with Project and logstore conditions.
-     * Unsuccessful opertaion will cause an AliyunLogException.
+     * Unsuccessful operation will cause an AliyunLogException.
      *
      * @param ListShardsRequest $request the ListShards request parameters class.
      * @return ListShardsResponse
@@ -879,7 +879,7 @@ class AliyunLogClient
 
     /**
      * split a shard into two shards  with Project and logstore and shardId and midHash conditions.
-     * Unsuccessful opertaion will cause an AliyunLogException.
+     * Unsuccessful operation will cause an AliyunLogException.
      *
      * @param SplitShardRequest $request the SplitShard request parameters class.
      * @return ListShardsResponse
@@ -905,7 +905,7 @@ class AliyunLogClient
 
     /**
      * merge two shards into one shard with Project and logstore and shardId and conditions.
-     * Unsuccessful opertaion will cause an AliyunLogException.
+     * Unsuccessful operation will cause an AliyunLogException.
      *
      * @param MergeShardsRequest $request the MergeShards request parameters class.
      * @return ListShardsResponse
@@ -929,7 +929,7 @@ class AliyunLogClient
 
     /**
      * delete a read only shard with Project and logstore and shardId conditions.
-     * Unsuccessful opertaion will cause an AliyunLogException.
+     * Unsuccessful operation will cause an AliyunLogException.
      *
      * @param DeleteShardRequest $request the DeleteShard request parameters class.
      * @return DeleteShardResponse
@@ -951,7 +951,7 @@ class AliyunLogClient
 
     /**
      * Get cursor from Log service.
-     * Unsuccessful opertaion will cause an AliyunLogException.
+     * Unsuccessful operation will cause an AliyunLogException.
      *
      * @param GetCursorRequest $request the GetCursor request parameters class.
      * @return GetCursorResponse
