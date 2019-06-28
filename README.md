@@ -1,5 +1,19 @@
 ﻿# Aliyun Log Service PHP SDK
 
+令和之初，为鲵苦阿里云SDK之PHP版本久矣，遂工之以魔改，使准行于PHP 5.6之环境，并置其包于Packagist，以善天下苍生。
+
+## Release
+
+`composer require sinri/aliyun-log-php-sdk` 
+
+![Package](https://img.shields.io/packagist/v/sinri/aliyun-log-php-sdk.svg)
+
+----
+
+以下为阿里SDK介绍原文
+
+----
+
 ## API VERSION
 
 0.6.1
