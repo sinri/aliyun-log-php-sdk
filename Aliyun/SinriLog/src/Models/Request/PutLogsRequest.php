@@ -33,7 +33,7 @@ class PutLogsRequest extends Request
     private $source;
 
     /**
-     * @var array LogItem array, log data
+     * @var LogItem[] LogItem array, log data
      */
     private $logitems;
 
@@ -53,7 +53,7 @@ class PutLogsRequest extends Request
      *            topic name
      * @param string $source
      *            source of the log
-     * @param array $logitems
+     * @param LogItem[] $logitems
      *            LogItem array,log data
      * @param null $shardKey
      */
