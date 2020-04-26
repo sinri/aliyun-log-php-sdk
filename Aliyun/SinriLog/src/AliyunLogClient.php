@@ -25,6 +25,7 @@ use sinri\aliyun\sls\Models\Request\DeleteShardRequest;
 use sinri\aliyun\sls\Models\Request\DeleteShipperRequest;
 use sinri\aliyun\sls\Models\Request\GetACLRequest;
 use sinri\aliyun\sls\Models\Request\GetConfigRequest;
+use sinri\aliyun\sls\Models\Request\GetContextLogsDIYRequest;
 use sinri\aliyun\sls\Models\Request\GetCursorRequest;
 use sinri\aliyun\sls\Models\Request\GetHistogramsRequest;
 use sinri\aliyun\sls\Models\Request\GetLogsRequest;
@@ -65,6 +66,7 @@ use sinri\aliyun\sls\Models\Response\DeleteShardResponse;
 use sinri\aliyun\sls\Models\Response\DeleteShipperResponse;
 use sinri\aliyun\sls\Models\Response\GetACLResponse;
 use sinri\aliyun\sls\Models\Response\GetConfigResponse;
+use sinri\aliyun\sls\Models\Response\GetContextLogsDIYResponse;
 use sinri\aliyun\sls\Models\Response\GetCursorResponse;
 use sinri\aliyun\sls\Models\Response\GetHistogramsResponse;
 use sinri\aliyun\sls\Models\Response\GetLogsResponse;
@@ -723,6 +725,35 @@ class AliyunLogClient
         $resp = $ret[0];
         $header = $ret[1];
         return new GetHistogramsResponse ($resp, $header);
+    }
+
+    /**
+     * @param GetContextLogsDIYRequest $request
+     * @return GetContextLogsDIYResponse
+     * @throws AliyunLogException
+     * @since 1.0.3
+     */
+    public function getContextLogs(GetContextLogsDIYRequest $request)
+    {
+        // 细节描述
+
+        // x-log-bodyrawsize: 0
+        // x-log-apiversion: 0.6.0
+        // x-log-signaturemethod: hmac-sha1
+        $headers = [];
+        $params = [
+            'type' => $request->getType(),
+            'pack_id' => $request->getPackId(),
+            'pack_meta' => $request->getPackMeta(),
+            'back_lines' => $request->getBackLines(),
+            'forward_lines' => $request->getForwardLines(),
+        ];
+        $resource = "/logstores/" . $request->getLogstoreName();
+
+        list ($resp, $header) = $this->send('GET', $request->getProject(), null, $resource, $params, $headers);
+        $requestId = isset ($header ['x-log-requestid']) ? $header ['x-log-requestid'] : '';
+        $resp = $this->parseToJson($resp, $requestId);
+        return new GetContextLogsDIYResponse($resp, $headers);
     }
 
     /**
