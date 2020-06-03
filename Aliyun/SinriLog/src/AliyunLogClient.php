@@ -210,7 +210,14 @@ class AliyunLogClient
         if (!$resBody)
             return NULL;
 
-        $result = json_decode($resBody, true);
+//        if(!defined('JSON_INVALID_UTF8_SUBSTITUTE')){
+//            define('JSON_INVALID_UTF8_SUBSTITUTE',2097152);
+//        }
+        $json_options = 0;
+        if (defined('JSON_INVALID_UTF8_SUBSTITUTE')) {
+            $json_options = 2097152;//JSON_INVALID_UTF8_SUBSTITUTE;
+        }
+        $result = json_decode($resBody, true, 512, $json_options);
         if ($result === NULL) {
             throw new AliyunLogException ('BadResponse', "Bad format,not json: $resBody", $requestId);
         }
